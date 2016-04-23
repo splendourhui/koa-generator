@@ -1,0 +1,30 @@
+{
+  "name": "koa-generator",
+  "version": "0.0.1",
+  "dependencies": {
+    "crypto": "*",
+    "co": "4.6.0",
+    "koa": "1.1.2",
+    "koa-better-body": "1.0.17",
+    "koa-logs-full": "*",
+    "koa-middlewares": "4.1.0",
+    "koa-validate": "0.2.11",
+    "lodash": "3.10.1",
+    "log4js": "0.6.28",
+    "moment": "2.10.6",
+    "mocha": "2.3.4",
+    "chai": "3.5.0",
+    "istanbul-harmony": "0.3.1",
+    "supertest": "1.1.0",
+    "mysql": "^2.10.0",
+    "sequelize": "3.15.1",
+    "jade": "1.11.0",
+    "superagent": "1.4.0",
+    "soap": "*"
+  },
+  "scripts": {
+    "start": "supervisor --harmony --ignore public app.js",
+    "test": "mocha --harmony",
+    "test-cov": "node --harmony node_modules/istanbul-harmony/lib/cli.js cover ./node_modules/mocha/bin/_mocha"
+  }
+}
