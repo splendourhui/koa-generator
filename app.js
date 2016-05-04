@@ -1,3 +1,12 @@
+/**
+* @Author: SplendourHui
+* @Date:   2016-04-29 09:54
+* @Last modified by:   SplendourHui
+* @Last modified time: 2016-05-04 20:59
+*/
+
+
+
 'use strict';
 
 const http = require('http');
@@ -72,8 +81,8 @@ app.use(function*(next) {
   try {
     yield next;
   } catch (e) {
-    let status = e.status || 500;
-    let message = e.message || 'Server error';
+    const status = e.status || 500;
+    const message = e.message || 'Server error';
     this.koaLogger.error(status);
     this.koaLogger.error(message);
 
@@ -89,16 +98,16 @@ app.use(function*(next) {
 
     // PageError
     this.status = status;
-    if (status == 401) {
+    if (status === 401) {
       // this.body = yield this.render('403.html', {'err': e});
     }
-    if (status == 403) {
+    if (status === 403) {
       // this.body = yield this.render('403.html', {'err': e});
     }
-    if (status == 404) {
+    if (status === 404) {
       // this.body = yield this.render('404.html', {'err': e});
     }
-    if (status == 500) {
+    if (status === 500) {
       // this.body = yield this.render('500.html', {'err': e});
       // koa error event
       this.app.emit('error', e, this);
@@ -116,8 +125,9 @@ app.use(router.routes());
 
 app = module.exports = http.createServer(app.callback());
 
+const koaLogger = global.koaLogger;
 if (!module.parent) {
-  let port = process.argv[2] || config.port;
+  const port = process.argv[2] || config.port;
   app.listen(port);
   koaLogger.warn(`$ Server is listening on port:${port}`);
 }

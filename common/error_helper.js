@@ -1,3 +1,12 @@
+/**
+* @Author: SplendourHui
+* @Date:   2016-04-29 09:54
+* @Last modified by:   SplendourHui
+* @Last modified time: 2016-05-04 20:55
+*/
+
+
+
 'use strict';
 
 class JsonError extends Error {

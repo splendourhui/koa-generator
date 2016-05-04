@@ -1,3 +1,12 @@
+/**
+* @Author: SplendourHui
+* @Date:   2016-04-29 09:54
+* @Last modified by:   SplendourHui
+* @Last modified time: 2016-05-04 20:55
+*/
+
+
+
 'use strict';
 
 const crypto = require('crypto');
@@ -9,11 +18,10 @@ let isArray;
 
 exports.md5Encrypt = md5Encrypt = string => {
   if (string === null) return null;
-  if (typeof(string) != 'string') return null;
-  var md5sum = crypto.createHash('md5');
+  if (typeof (string) !== 'string') return null;
+  const md5sum = crypto.createHash('md5');
   md5sum.update(string, 'utf8');
-  string = md5sum.digest('hex');
-  return string;
+  return md5sum.digest('hex');
 };
 
 exports.getVerifyCode = getVerifyCode = strArray => {
@@ -22,10 +30,8 @@ exports.getVerifyCode = getVerifyCode = strArray => {
   return md5Encrypt(strArray.join('').toUpperCase());
 };
 
-exports.isArray = isArray = object => {
-  return Object.prototype.toString.call(object) === '[object Array]';
-}
+exports.isArray = isArray = object =>
+  Object.prototype.toString.call(object) === '[object Array]';
 
-exports.getJSONData = function (reqData) {
-  return typeof reqData == 'string' ? JSON.parse(reqData) : reqData;
-};
+exports.getJSONData = reqData =>
+  typeof reqData === 'string' ? JSON.parse(reqData) : reqData;
