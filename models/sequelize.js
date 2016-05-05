@@ -1,27 +1,26 @@
 /**
-* @Author: SplendourHui
-* @Date:   2016-05-04 20:52
+ * @Author: SplendourHui
+ * @Date:   2016-05-04 20:52
 * @Last modified by:   SplendourHui
-* @Last modified time: 2016-05-04 20:56
-*/
+* @Last modified time: 2016-05-05 19:59
+ */
 
 
 
 'use strict';
 
 const Sequelize = require('sequelize');
-const config = require('../config');
+const dbConfig = require('config').get('db');
 
-module.exports = new Sequelize(config.db.dbName,
-  config.db.username,
-  config.db.password,
-  {
-    host: config.db.dbUrl,
-    dialect: config.db.dialect,
-    port: config.db.port,
+module.exports = new Sequelize(dbConfig.dbName,
+  dbConfig.username,
+  dbConfig.password, {
+    host: dbConfig.dbUrl,
+    dialect: dbConfig.dialect,
+    port: dbConfig.port,
     pool: {
-      max: config.db.pool.maxConnections,
-      min: config.db.pool.minConnection
+      max: dbConfig.pool.maxConnections,
+      min: dbConfig.pool.minConnection
     },
     define: {
       timestamps: false

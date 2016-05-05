@@ -1,3 +1,12 @@
+<!--
+@Author: SplendourHui
+@Date:   2016-05-04 20:52
+@Last modified by:   SplendourHui
+@Last modified time: 2016-05-05 19:58
+-->
+
+
+
 ## koa-generator
 
 ### 用法
@@ -12,28 +21,6 @@ npm start
 npm test
 ```
 使用 Mocha + Chai 测试框架
-
-#### 配置文件
-在根目录下，新建 config.json 配置文件。参考配置如下：
-```
-{
-  "port": 3000,
-  "db": {
-    "username": "username",
-    "password": "password",
-    "dbName": "dbName",
-    "dbUrl": "dbUrl",
-    "dbPort": 3306,
-    "dialect": "mysql",
-    "pool": {
-      "maxConnections": 5,
-      "minConnection": 1
-    }
-  }
-}
-```
-
-
 
 #### 目录结构
 - common

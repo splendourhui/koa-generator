@@ -1,0 +1,15 @@
+{
+  "defaultPort": 3333,
+  "db": {
+    "username": "username",
+    "password": "password",
+    "dbName": "dbName",
+    "dbUrl": "dbUrl",
+    "dbPort": 3306,
+    "dialect": "mysql",
+    "pool": {
+      "maxConnections": 5,
+      "minConnection": 1
+    }
+  }
+}

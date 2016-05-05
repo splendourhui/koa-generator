@@ -1,9 +1,9 @@
 /**
-* @Author: SplendourHui
-* @Date:   2016-04-29 09:54
+ * @Author: SplendourHui
+ * @Date:   2016-04-29 09:54
 * @Last modified by:   SplendourHui
-* @Last modified time: 2016-05-04 20:59
-*/
+* @Last modified time: 2016-05-05 19:54
+ */
 
 
 
@@ -18,7 +18,6 @@ const easyLogger = require('./middlewares/easy_logger');
 const koaBody = require('koa-better-body');
 const koaValidate = require('koa-validate');
 
-const config = require('./config');
 const errorHelper = require('./common/error_helper');
 
 let app = new koa();
@@ -77,7 +76,7 @@ easyLogger.easyLogger();
  *   throw new errorHelper.JsonError('no permission', 401);
  * 则错误就被下面捕捉到，在这里执行自己想要的操作即可
  */
-app.use(function*(next) {
+app.use(function* (next) {
   try {
     yield next;
   } catch (e) {
@@ -127,7 +126,7 @@ app = module.exports = http.createServer(app.callback());
 
 const koaLogger = global.koaLogger;
 if (!module.parent) {
-  const port = process.argv[2] || config.port;
+  const port = process.argv[2] || require('config').get('defaultPort');
   app.listen(port);
   koaLogger.warn(`$ Server is listening on port:${port}`);
 }

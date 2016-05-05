@@ -1,8 +1,9 @@
 {
   "name": "koa-generator",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "dependencies": {
     "co": "4.6.0",
+    "config": "^1.20.1",
     "koa": "1.1.2",
     "koa-better-body": "1.0.17",
     "koa-logs-full": "*",
