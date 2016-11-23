@@ -1,5 +1,8 @@
 {
-  "defaultPort": 3333,
+  "defaultPort": 3000,
+  "wechatConfigs": {
+    "token": "928797_l"
+  },
   "db": {
     "username": "username",
     "password": "password",

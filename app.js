@@ -1,11 +1,9 @@
 /**
- * @Author: SplendourHui
- * @Date:   2016-04-29 09:54
+* @Author: SplendourHui
+* @Date:   2016-11-23 09:35
 * @Last modified by:   SplendourHui
-* @Last modified time: 2016-05-05 19:54
- */
-
-
+* @Last modified time: 2016-11-23 09:50
+*/
 
 'use strict';
 
@@ -13,6 +11,7 @@ const http = require('http');
 const path = require('path');
 const koa = require('koa');
 const middlewares = require('koa-middlewares');
+const router = middlewares.router();
 const logRecord = require('koa-logs-full');
 const easyLogger = require('./middlewares/easy_logger');
 const koaBody = require('koa-better-body');
@@ -118,7 +117,6 @@ app.use(function* (next) {
  * routes
  */
 app.use(koaValidate());
-const router = middlewares.router();
 require('./routes')(router);
 app.use(router.routes());
 
